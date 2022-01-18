@@ -41,9 +41,7 @@ rm redis:some_key
 Coming Soon(tm)
 ---------------
 
-* Non-graph auth
 * Better RedisGraph output formatting
-* Vendored static Redis client
 * RediSearch support
 
 Disclaimer

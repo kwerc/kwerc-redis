@@ -10,7 +10,7 @@ fn redis cmd {
     }
     # Allow linebreaks in redis input, send to redis, and format output
     echo $cmd | tr '
-' ' ' | /usr/bin/redis-cli -h $REDISCLI_HOST -p $REDISCLI_PORT --no-raw | \
+' ' ' | redis-cli -h $REDISCLI_HOST -p $REDISCLI_PORT --no-raw | \
          sed -n '/^2\)/,/^3\)/p' | sed '$d' | sed 's/[0-9]+\) //g; s/^ *//; s/^"//; s/"$//; s/\(integer\) //; s/^$/\(nil\)/'
 }
 
